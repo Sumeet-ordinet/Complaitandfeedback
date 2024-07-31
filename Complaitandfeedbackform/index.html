@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complaint and Feedback</title>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    header, footer {
+        background-color: white;
+        color: black;
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    button {
+        padding: 15px 30px; /* Adjust padding to increase height */
+        font-size: 18px;
+        background-color: #0d2441; /* Green */
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        margin: 10px auto;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #0d2441; /* Darker green */
+    }
+    header {
+        padding-bottom: 100px; /* Add padding to the top of the footer */
+    }
+    
+    footer {
+        padding-top: 200px; /* Add padding to the top of the footer */
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Sumeet Facilities Portal</h1>
+</header>
+<br /> 
+<br /> 
+<button id="complaintButton" >Complaint</button>
+<button id="feedbackButton">Feedback</button>
+<br /> 
+
+<footer>
+    <p>&copy; 2024 Complaint and Feedback Portal</p>
+</footer>
+
+<script>
+    // Function to get URL parameters
+    function getUrlParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    // Get parameters from the URL
+    const clientId = getUrlParameter('ci');
+    const projectId = getUrlParameter('pi');
+    const organizationId = getUrlParameter('oi');
+    const siteId = getUrlParameter('si');
+
+    // Log the parameters for debugging
+    console.log('Client ID:', clientId);
+    console.log('Project ID:', projectId);
+    console.log('Organization ID:', organizationId);
+    console.log('Site ID:', siteId);
+
+    // Get button elements
+    const complaintButton = document.getElementById('complaintButton');
+    const feedbackButton = document.getElementById('feedbackButton');
+
+    // Set onclick event for the buttons
+    complaintButton.onclick = function() {
+        // Log the URL for debugging
+        const url = `complaint/complaintForm.html?client_id=${clientId}&project_id=${projectId}&organization_id=${organizationId}&site_id=${siteId}`;
+        console.log("Redirecting to:", url);
+        window.location.href = url;
+    };
+
+    feedbackButton.onclick = function() {
+        // Log the URL for debugging
+        const url = `feedback/feedbackForm.html?client_id=${clientId}&project_id=${projectId}&organization_id=${organizationId}&site_id=${siteId}`;
+        console.log("Redirecting to:", url);
+        window.location.href = url;
+    };
+</script>
+
+
+
+<!-- <script>
+const clientId = 4;
+        const projectId = 117;
+        const organizationId = 12;
+        const siteId = 31;
+
+    // Get button elements
+    const complaintButton = document.getElementById('complaintButton');
+    const feedbackButton = document.getElementById('feedbackButton');
+
+    // Set onclick event for the buttons
+    complaintButton.onclick = function() {
+        // Log the URL for debugging
+        const url = `Complaint/complaintForm.html?client_id=${clientId}&project_id=${projectId}&organization_id=${organizationId}&site_id=${siteId}`;
+        console.log("Redirecting to:", url);
+        window.location.href = url;
+    };
+
+    feedbackButton.onclick = function() {
+        // Log the URL for debugging
+        const url = `feedback/feedbackForm.html?client_id=${clientId}&project_id=${projectId}&organization_id=${organizationId}&site_id=${siteId}`;
+        console.log("Redirecting to:", url);
+        window.location.href = url;
+    };
+    </script> -->
+</body>
+</html>

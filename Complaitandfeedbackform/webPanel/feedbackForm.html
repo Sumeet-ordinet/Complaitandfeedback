@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 4" id="eye">
+        <path d="M1,1 C1.83333333,2.16666667 2.66666667,2.75 3.5,2.75 C4.33333333,2.75 5.16666667,2.16666667 6,1"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 7" id="mouth">
+        <path d="M1,5.5 C3.66666667,2.5 6.33333333,1 9,1 C11.6666667,1 14.3333333,2.5 17,5.5"></path>
+    </symbol>
+  </svg>
+
+<!-- dribbble - twitter -->
+<a class="dribbble" href="https://dribbble.com/ai" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
+<a class="twitter" target="_blank" href="https://twitter.com/aaroniker_me"><svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72"><path d="M67.812 16.141a26.246 26.246 0 0 1-7.519 2.06 13.134 13.134 0 0 0 5.756-7.244 26.127 26.127 0 0 1-8.313 3.176A13.075 13.075 0 0 0 48.182 10c-7.229 0-13.092 5.861-13.092 13.093 0 1.026.118 2.021.338 2.981-10.885-.548-20.528-5.757-26.987-13.679a13.048 13.048 0 0 0-1.771 6.581c0 4.542 2.312 8.551 5.824 10.898a13.048 13.048 0 0 1-5.93-1.638c-.002.055-.002.11-.002.162 0 6.345 4.513 11.638 10.504 12.84a13.177 13.177 0 0 1-3.449.457c-.846 0-1.667-.078-2.465-.231 1.667 5.2 6.499 8.986 12.23 9.09a26.276 26.276 0 0 1-16.26 5.606A26.21 26.21 0 0 1 4 55.976a37.036 37.036 0 0 0 20.067 5.882c24.083 0 37.251-19.949 37.251-37.249 0-.566-.014-1.134-.039-1.694a26.597 26.597 0 0 0 6.533-6.774z"></path></svg></a>
+
+
+    <title>Feedback</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+          padding: 20px;
+        }
+        .container {
+          max-width: 600px;
+          margin: 0 auto;
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+          margin-top: 0;
+        }
+        label {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+        input[type="text"],
+        textarea {
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        button {
+          background-color: #4caf50;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: #45a049;
+        }
+        .star-rating {
+    display: inline-block;
+}
+
+.star-rating .star {
+    font-size: 24px;
+    color: #ccc; /* default color */
+    cursor: pointer;
+}
+
+.star-rating .star.active {
+    color: gold; /* active color */
+}
+
+      </style>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+
+<body>
+    <!-- <div class="container">
+        <div class="header-bg">
+
+        </div>
+    </div> -->
+
+    <div class="main-feedback"> 
+
+        <p class="sign" align="center">Feedback Form</p>
+                   
+       
+        <div id="registration-form" class="form1" style="height: 600px; overflow-y: auto;">  
+
+            <label for="username">Name :<span style="color: red">*</span></label>
+            <input id="username" type="text" name="username" style="width: 70%; height: 5%;"  /><br />
+
+            <label for="mobileNumber">Mobile No :<span style="color: red">*</span></label>
+            <input type="text" id="mobileNumber" style="width: 70%; height: 5%;" /><br />
+
+            <label for="location">Location :<span style="color: red">*</span></label>
+
+            <select id="inputLocation" style="width: 70%; height: 5%; background-color: white; margin-left: 10%;">
+                <option value="">Select Location</option>
+                 </select>
+                <br /> <br />
+
+                <label for="Area">Area :<span style="color: red">*</span></label>
+
+                <select id="inputArea" style="width: 70%; height: 5%; background-color: white; margin-left: 10%;">
+                    <option value="">Select Area</option>
+                </select>
+                <br /> <br />  
+
+                  <label for="question1">Question 1:</label>
+                    <input type="text" id="question1" name="question1" value="What is the capital of France?" readonly>
+                
+                <!-- <ul class="feedback">
+                    <li class="angry">
+                        <div>
+                            <svg class="eye left">
+                                <use xlink:href="#eye">
+                            </svg>
+                            <svg class="eye right">
+                                <use xlink:href="#eye">
+                            </svg>
+                            <svg class="mouth">
+                                <use xlink:href="#mouth">
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="sad">
+                        <div>
+                            <svg class="eye left">
+                                <use xlink:href="#eye">
+                            </svg>
+                            <svg class="eye right">
+                                <use xlink:href="#eye">
+                            </svg>
+                            <svg class="mouth">
+                                <use xlink:href="#mouth">
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="ok">
+                        <div></div>
+                    </li>
+                    <li class="good active">
+                        <div>
+                            <svg class="eye left">
+                                <use xlink:href="#eye">
+                            </svg>
+                            <svg class="eye right">
+                                <use xlink:href="#eye">
+                            </svg>
+                            <svg class="mouth">
+                                <use xlink:href="#mouth">
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="happy">
+                        <div>
+                            <svg class="eye left">
+                                <use xlink:href="#eye">
+                            </svg>
+                            <svg class="eye right">
+                                <use xlink:href="#eye">
+                            </svg>
+                        </div>
+                    </li>
+                </ul>    -->
+
+            
+                <ul class="feedback" id="question1" >
+                    <li class="angry" data-text="Very Bad">
+                        <div>
+                            <svg class="eye left">
+                                <use xlink:href="#eye"></use>
+                            </svg>
+                            <svg class="eye right">
+                                <use xlink:href="#eye"></use>
+                            </svg>
+                            <svg class="mouth">
+                                <use xlink:href="#mouth"></use>
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="sad" data-text="Bad">
+                        <div>
+                            <svg class="eye left">
+                                <use xlink:href="#eye"></use>
+                            </svg>
+                            <svg class="eye right">
+                                <use xlink:href="#eye"></use>
+                            </svg>
+                            <svg class="mouth">
+                                <use xlink:href="#mouth"></use>
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="ok" data-text="Good">
+                        <div></div>
+                    </li>
+                    <li class="good active" data-text="Very Good">
+                        <div>
+                            <svg class="eye left">
+                                <use xlink:href="#eye"></use>
+                            </svg>
+                            <svg class="eye right">
+                                <use xlink:href="#eye"></use>
+                            </svg>
+                            <svg class="mouth">
+                                <use xlink:href="#mouth"></use>
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="happy" data-text="Excellent">
+                        <div>
+                            <svg class="eye left">
+                                <use xlink:href="#eye"></use>
+                            </svg>
+                            <svg class="eye right">
+                                <use xlink:href="#eye"></use>
+                            </svg>
+                        </div>
+                    </li>  
+                </ul>
+
+
+                <div id="selectedText" style="margin-left: 5%;margin-right: 20%; display: flex; justify-content: space-evenly;" >
+                    <span class="text-option" style="font-size: 10px;">Very Bad</span>
+                    <span class="text-option" style="font-size: 10px;">Bad</span>
+                    <span class="text-option" style="font-size: 10px;">Good</span> 
+                    <span class="text-option" style="font-size: 10px;">Very Good</span>
+                    <span class="text-option" style="font-size: 10px;">Excellent</span>
+                </div> 
+        
+                <br />
+
+
+                <label for="description">Description :<span style="color: red">*</span></label>
+            <textarea rows="3" id="description" style="margin-left: 50px; width: 70%;"></textarea><br /><br />
+
+            <div >
+                <input class="submit" id="submitForm" type="submit" value="Submit" /><br />
+            </div> 
+
+                <!-- <div class="question">
+                    <label for="question1">Question 1:</label>
+                    <input type="text" id="question1" name="question1" value="What is the capital of France?" readonly>
+                
+                    <label for="answer1">Your Answer:</label>
+                    <div class="star-rating" data-question="1" style="margin-left: 10%; height: 50px;">
+                        <span class="star" data-rating="1">&#9733;</span>
+                        <span class="star" data-rating="2">&#9733;</span>
+                        <span class="star" data-rating="3">&#9733;</span>
+                        <span class="star" data-rating="4">&#9733;</span>
+                        <span class="star" data-rating="5">&#9733;</span>
+                    </div>
+                    <input type="hidden" class="answer-input" name="answer1" value="0"> <br />  
+                </div> -->
+  
+                <!-- Question 2 -->
+                <!-- <div class="question">
+                    <label for="question2">Question 2:</label>
+                    <input type="text" id="question2" name="question2" value="Your second question here?" readonly>
+
+                    <label for="answer2">Your Answer:</label>
+                    <div class="star-rating" data-question="2" style="margin-left: 10%; height: 50px;">
+                        <span class="star" data-rating="1">&#9733;</span>
+                        <span class="star" data-rating="2">&#9733;</span>
+                        <span class="star" data-rating="3">&#9733;</span>
+                        <span class="star" data-rating="4">&#9733;</span>
+                        <span class="star" data-rating="5">&#9733;</span>
+                    </div>
+                    <input type="hidden" class="answer-input" name="answer2" value="0"> <br />  
+                </div> -->
+
+                <!-- Question 3 -->
+                <!-- <div class="question">
+                    <label for="question3">Question 3:</label>
+                    <input type="text" id="question3" name="question3" value="Your third question here?" readonly>
+
+                    <label for="answer3">Your Answer:</label>
+                    <div class="star-rating" data-question="3" style="margin-left: 10%; height: 50px;">
+                        <span class="star" data-rating="1">&#9733;</span>
+                        <span class="star" data-rating="2">&#9733;</span>
+                        <span class="star" data-rating="3">&#9733;</span>
+                        <span class="star" data-rating="4">&#9733;</span>
+                        <span class="star" data-rating="5">&#9733;</span>
+                    </div>
+                    <input type="hidden" class="answer-input" name="answer3" value="0"> <br />  
+                </div> -->
+
+                <!-- Question 4 -->
+                <!-- <div class="question">
+                    <label for="question4">Question 4:</label>
+                    <input type="text" id="question4" name="question4" value="Your fourth question here?" readonly>
+
+                    <label for="answer4">Your Answer:</label>
+                    <div class="star-rating" data-question="4" style="margin-left: 10%; height: 50px;">
+                        <span class="star" data-rating="1">&#9733;</span>
+                        <span class="star" data-rating="2">&#9733;</span>
+                        <span class="star" data-rating="3">&#9733;</span>
+                        <span class="star" data-rating="4">&#9733;</span>
+                        <span class="star" data-rating="5">&#9733;</span>
+                    </div>
+                    <input type="hidden" class="answer-input" name="answer4" value="0"> <br />  
+                </div> -->
+
+                <!-- Question 5 -->
+                <!-- <div class="question">
+                    <label for="question5">Question 5:</label>
+                    <input type="text" id="question5" name="question5" value="Your fifth question here?" readonly>
+
+                    <label for="answer5">Your Answer:</label>
+                    <div class="star-rating" data-question="5" style="margin-left: 10%; height: 50px;">
+                        <span class="star" data-rating="1">&#9733;</span>
+                        <span class="star" data-rating="2">&#9733;</span>
+                        <span class="star" data-rating="3">&#9733;</span>
+                        <span class="star" data-rating="4">&#9733;</span>
+                        <span class="star" data-rating="5">&#9733;</span>
+                    </div>
+                    <input type="hidden" class="answer-input" name="answer5" value="0"> <br />  
+                </div> -->
+
+                
+                <!-- ///------------------------------------------------------------ -->
+            
+                <!-- <div class="question">
+                    <label for="question1">Question 1:</label>
+                    <input type="text" id="question1" name="question1" value="What is the capital of France?" readonly>
+                
+                    <label for="answer1">Your Answer:</label>
+                    <div id="starRating1" class="star-rating" style="margin-left: 12%;">
+                        <span class="star" data-rating="1">&#9733;</span>
+                        <span class="star" data-rating="2">&#9733;</span>
+                        <span class="star" data-rating="3">&#9733;</span>
+                        <span class="star" data-rating="4">&#9733;</span>
+                        <span class="star" data-rating="5">&#9733;</span>
+                    </div>
+                    <input type="hidden" class="answer-input" name="answer1" value="0"> <br />  
+                </div> -->
+            
+
+            <!-- <div class="question">
+                <label for="question2">Question 2:</label>
+                <input type="text" id="question2" name="question2" value="Who is the author of Romeo and Juliet?" readonly>
+
+                <label for="answer2">Your Answer:</label>
+                <textarea id="answer2" name="answer2" rows="2" style="margin-left: 50px; width: 70%;" required></textarea>
+            </div>
+
+            <div class="question">
+                <label for="question3">Question 3:</label>
+                <input type="text" id="question3" name="question3" value="What is the chemical symbol for water?" readonly>
+
+                <label for="answer3">Your Answer:</label>
+                <textarea id="answer3" name="answer3" rows="2" style="margin-left: 50px; width: 70%;" required></textarea>
+            </div>
+
+            <div class="question">
+                <label for="question4">Question 4:</label>
+                <input type="text" id="question4" name="question4" value="Who painted the Mona Lisa?" readonly>
+
+                <label for="answer4">Your Answer:</label>
+                <textarea id="answer4" name="answer4" rows="2" style="margin-left: 50px; width: 70%;" required></textarea>
+            </div>
+
+            <div class="question">
+                <label for="question5">Question 5:</label>
+                <input type="text" id="question5" name="question5" value="What year did the Titanic sink?" readonly>
+
+                <label for="answer5">Your Answer:</label>
+                <textarea id="answer5" name="answer5" rows="2" style="margin-left: 50px; width: 70%;" required></textarea>
+            </div> -->
+
+             
+
+        </div>
+    </div>
+    <script src="Urls.js"></script>
+    <script src="feedbackForm.js"></script>
+    
+
+
+  
+</body>
+
+</html>

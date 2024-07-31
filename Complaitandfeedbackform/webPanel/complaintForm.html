@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>Complaint</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head> 
+
+<body>
+
+    <div class="main">
+
+        <p class="sign" align="center">Complaint Form</p>
+
+        <div id="registration-form" class="form1"> 
+
+            <label for="username">Name :<span style="color: red">*</span></label>
+            <input id="username" type="text" name="username" /><br />
+
+            <!-- <label for="mobileNumber">Mobile No :<span style="color: red">*</span></label>
+            <input type="text" id="mobileNumber"  /><br /> -->
+
+            <label for="location">Location :<span style="color: red">*</span></label>
+             
+            <select id="inputLocation" style="background-color: white; width: 280px; height: 30px; margin: 0 auto 0 50px; display: block;">
+            <option value="">Select Location</option>
+             </select>
+            <br />
+
+            <label for="area">Area :<span style="color: red">*</span></label>
+            
+            <select id="inputArea" style="background-color: white; width: 280px; height: 30px; margin: 0 auto 0 50px; display: block;">
+                <option value="">Select Area</option>
+            </select>
+            <br /> 
+
+            <label for="description">Description :<span style="color: red">*</span></label>
+            <textarea rows="3" id="description" style="margin-left: 50px; width: 70%;"></textarea><br /><br/>
+
+
+            <div class="form-group">
+                <label   for="photoUpload">Select a photo:<font color="red">*
+             </font></label><br/>
+                 <input class="form-group py-4 my-2" type="file" style="width: 70%;" id="photoUpload" accept="image/*">
+                
+            </div>
+             
+            <!-- <h5>Images Uploaded</h5>  -->
+            <!-- <label for="Images">Images Uploaded :</label>
+
+                <div class="row" id="imageList"></div> 
+           
+                <label for="inputImage" class="upload-button">Click to upload Images</label><br />
+                <input type="file" class="form-control-file" accept="image/*" multiple id="inputImage" style="display: none;"><br />
+                 -->
+            <div > 
+                <input class="submit" id="submitForm" type="submit" value="Submit" /> <br/>
+            </div>  
+
+        </div> 
+    </div>
+
+    <script>
+
+        const fileInput = document.getElementById('inputImage');
+        const imageList = document.getElementById('imageList');
+        
+        let displayedImages = 0;
+        
+        fileInput.addEventListener('change', function() {
+            // Get the selected files
+            const files = fileInput.files;
+        
+            // Display selected images
+            for (let i = 0; i < 12; i++) {
+                const file = files[i];
+        
+                if (displayedImages >= 12) {
+                    alert('Maximum images limit reached (12 images)');
+                    break; // Exit the loop if the limit is reached
+                    
+                }
+                // Check if the file is an image
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+        
+                    reader.onload = function(event) {
+                        // Create an image element
+                        const image = document.createElement('img');
+                        image.src = event.target.result;
+                        image.classList.add('uploaded-image');
+                        image.style.height = "100px";
+                        image.style.width = "170px";
+                        image.style.padding = "7px"
+        
+        
+                        // Append the image to the image list
+                        imageList.appendChild(image);
+                        displayedImages++;
+        
+                    if (displayedImages === 12) {
+                        console.log('Maximum images limit reached (12 images)');
+                    }
+                    };
+        
+                    reader.readAsDataURL(file);
+                }
+            }
+        
+            // Clear the file input after displaying images
+            fileInput.value = '';
+        });
+        
+        
+        </script>
+
+
+    <script src="Urls.js"></script>
+    <script src="complaintForm.js"></script>
+    
+</body>
+
+</html>
